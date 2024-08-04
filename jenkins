@@ -4,6 +4,12 @@ pipeline{
             stage('Scm chekout'){
                 steps{git branch: 'master', url: 'https://github.com/Abhinav501-eng/javaparser-maven-sample'}
             }
+            stage('code compile'){
+                steps{withMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) 
+                {
+                    sh 'mvn compile'
+                }}
+            }
         }
     
 }
