@@ -1,9 +1,9 @@
 pipeline{
-    agent any{
+    agent any
         steges{
             stage('Scm chekout'){
                 steps{git branch: 'master', url: 'https://github.com/Abhinav501-eng/javaparser-maven-sample'}
             }
         }
-    }
+    
 }
